@@ -10,6 +10,10 @@ int check_cycle(listint_t *list)
 {
 	listint_t *ptr1, *ptr2;
 
+	if (list == NULL)
+	{
+		return (0);
+	}
 	ptr2 = ptr1 = list;
 	while (ptr1->next && ptr1->next->next)
 	{
