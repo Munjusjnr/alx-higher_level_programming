@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 from calculator_1 import add, sub, mul, div
+import sys
+
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    elif sys.argv[2]) not in ['+' or '-' or '*' or '/']:
+    if sys.argv[2] not in ['+' or '-' or '*' or '/']:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
     else:
