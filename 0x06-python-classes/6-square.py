@@ -20,6 +20,16 @@ class Square:
         Another condition to check whether value is a real number
 
         """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+        if not isinstance(position, tuple) or len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(isinstance(v, int) and v >= 0 for v in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+
     @property
     def size(self):
         """ size getter
@@ -51,11 +61,9 @@ class Square:
     @position.setter
     def position(self, value):
         """ position setter and Returns position value of a square """
-        if (
-            not isinstance(value, tuple)
-            or len(value) != 2
-            or not all(isinstance(v, int) and v >= 0 for v in value)
-        ):
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(isinstance(v, int) and v >= 0 for v in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
