@@ -1,5 +1,8 @@
 #!/usr/bin/python3
+
 """ The function returns the summation of integers """
+
+
 def add_integer(a, b=98):
     """ This function seeks to add two numbers
 
