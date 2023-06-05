@@ -96,4 +96,4 @@ class Rectangle:
 
     def __repr__(self):
         """ Method that returns a string representation for recreation """
-        return (f"Rectangle(width={self.__width}, height={self.__height})")
+        return (f"Rectangle({self.__width:d}, {self.__height:d})")
