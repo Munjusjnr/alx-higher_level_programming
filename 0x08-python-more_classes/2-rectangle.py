@@ -76,7 +76,7 @@ class Rectangle:
 
     def perimeter(self):
         """ A public instance that returns the perimeter of the rectangle """
-        per = (self.__width + self.__height) * 2
+        per_result = (self.__width + self.__height) * 2
         if self.__width == 0 or self.__height == 0:
-            per == 0
-        return per
+            per_result = 0
+        return per_result
