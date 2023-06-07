@@ -37,6 +37,11 @@ class TestMaxInteger(unittest.TestCase):
         numbers = [7, 8, 8, 9, 5, 6, 6]
         self.assertEqual(max_integer(numbers), 9)
 
+    def test_max_integer_beginning(self):
+        """ Testing with a maximum at the beginning of the list """
+        numbers = [100, 7, 9, 8, 54, 98]
+        self.assertEqual(max_integer(numbers), 100)
+
 
 if __name__ == '__main__':
     unittest.main()
