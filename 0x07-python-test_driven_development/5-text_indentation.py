@@ -22,15 +22,13 @@ def text_indentation(text):
 
     characters = [":", ".", "?"]
     current_line = ""
-    lines = []
 
     for char in text:
         current_line += char
         if char in characters:
-            lines.append(current_line.strip())
+            print(current_line.strip())
+            print()
             current_line = ""
 
     if current_line:
-        lines.append(current_line.strip())
-
-    print("\n\n".join(lines))
+        print(current_line.strip(), end="")
