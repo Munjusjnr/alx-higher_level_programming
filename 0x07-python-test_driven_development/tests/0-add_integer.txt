@@ -63,19 +63,6 @@ Traceback (most recent call last):
   File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 27, in add_integer
     raise TypeError(error)
 TypeError: a must be an integer
->>> print(add_integer(None))
-Traceback (most recent call last):
-  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 18, in add_integer
-    raise TypeError("a must be an integer")
-TypeError: a must be an integer
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 27, in add_integer
-    raise TypeError(error)
-TypeError: a must be an integer
 >>> print(add_integer(float('nan'), 10))
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -94,3 +81,7 @@ Traceback (most recent call last):
   File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 21, in add_integer
     a = int(a) if isinstance(a, float) else a
 ValueError: cannot convert float NaN to integer
+>>> print(add_integer())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: add_integer() missing 1 required positional argument: 'a'
