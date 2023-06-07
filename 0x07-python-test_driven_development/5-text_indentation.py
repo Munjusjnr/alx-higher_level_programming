@@ -21,12 +21,14 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     characters = [":", ".", "?"]
+    current_line = ""
 
-    words = text.split()
+    for char in text:
+        current_line += char
+        if char in characters:
+            print(current_line.strip())
+            print()
+            current_line = ""
 
-    for i, phrase in enumerate(words):
-        print(phrase, end="")
-        if any(char in phrase for char in characters):
-            print("\n")
-        elif i < len(words) - 1:
-            print(" ", end="")
+    if current_line:
+        print(current_line.strip())
