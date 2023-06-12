@@ -1,0 +1,47 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+>>> bg.integer_validator("name", "Chan")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError("{:s} must be an integer".format(name))
+TypeError: name must be an integer
+>>> bg.integer_validator("marks", -4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 20, in integer_validator
+    raise ValueError("{:s} must be greater than zero".format(name))
+ValueError: marks must be greater than zero
+>>> bg.integer_validator("scores", 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 20, in integer_validator
+    raise ValueError("{:s} must be greater than zero".format(name))
+ValueError: scores must be greater than zero
+>>> bg.integer_validator("nope", [1, 2, 8, 9])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError("{:s} must be an integer".format(name))
+TypeError: nope must be an integer
+>>> bg.integer_validator("price", 2.2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError("{:s} must be an integer".format(name))
+TypeError: price must be an integer
+>>> bg.integer_validator()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> bg.integer_validator("hi", 5, True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+>>> bg.integer_validator("what's up")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>>
