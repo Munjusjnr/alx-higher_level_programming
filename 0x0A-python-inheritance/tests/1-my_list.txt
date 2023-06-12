@@ -1,0 +1,23 @@
+Type "help", "copyright", "credits" or "license" for more information.
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.append(8)
+>>> print(my_list)
+[1, 4, 2, 3, 5, 8]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5, 8]
+>>> print(my_list)
+[1, 4, 2, 3, 5, 8]
+>>> my_list = MyList("particulars")
+>>> print(my_list)
+['p', 'a', 'r', 't', 'i', 'c', 'u', 'l', 'a', 'r', 's']
+>>> my_list.print_sorted()
+['a', 'a', 'c', 'i', 'l', 'p', 'r', 'r', 's', 't', 'u']
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
