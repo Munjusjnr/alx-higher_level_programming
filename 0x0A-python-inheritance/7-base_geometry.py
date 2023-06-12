@@ -4,14 +4,29 @@
 
 
 class BaseGeometry:
-    """ A class of BaseGeometry """
+    """ A BaseGeometry class for geometry calculations and validations """
 
     def area(self):
-        """ A public instance method that raises an Exception message """
+        """ Calculating the area of the geometry
+
+        A method that provide specific implementation for calculating the area
+
+        Raises:
+            Exception: The method is not implement in the base class
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """ A public  instance that validates value """
+        """ A public  instance that validates value as an integer
+
+        Args:
+            name: The name argument will always be a string
+            value: The value to be validated
+
+        Raises:
+            TypeError: if the value is not an integer
+            ValueError: if the value is zero or negative
+        """
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
