@@ -12,14 +12,14 @@ TypeError: name must be an integer
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 20, in integer_validator
-    raise ValueError("{:s} must be greater than zero".format(name))
-ValueError: marks must be greater than zero
+    raise ValueError("{:s} must be greater than 0".format(name))
+ValueError: marks must be greater than 0
 >>> bg.integer_validator("scores", 0)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 20, in integer_validator
-    raise ValueError("{:s} must be greater than zero".format(name))
-ValueError: scores must be greater than zero
+    raise ValueError("{:s} must be greater than 0".format(name))
+ValueError: scores must be greater than 0
 >>> bg.integer_validator("nope", [1, 2, 8, 9])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
