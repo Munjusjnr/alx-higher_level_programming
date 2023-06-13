@@ -43,5 +43,5 @@ def main():
     save_to_json_file(my_list, "add_item.json")
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     main()
