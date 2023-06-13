@@ -9,9 +9,9 @@ def load_from_json_file(filename):
 
     Args:
         filename: path to the file where the objects would be created from
+
+    Return: objects created
     """
     with open(filename, encoding="UTF8") as f:
-        """ looping through the file line by line """
-        for line in f:
-            data.append(json.loads(line))
-    return data
+        my_data = json.load(f)
+    return my_data
