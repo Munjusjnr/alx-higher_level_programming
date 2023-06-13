@@ -4,6 +4,12 @@
 
 
 def read_file(filename=""):
+    """ Reads a file and print to stdout
+
+        Argument:
+            filename: the name of the file for which its content
+                        would be printed out
+    """
     with open(filename, encoding="UTF8") as f:
         read_data = f.read()
-    print(read_data)
+        print(read_data)
