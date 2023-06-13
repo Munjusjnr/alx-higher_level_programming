@@ -16,6 +16,7 @@ def save_to_json_file(my_obj, filename):
     with open(filename, mode='w', encoding="UTF8") as f:
         f.write(json.dumps(my_obj))
 
+
 def load_from_json_file(filename):
     """ Deserializing a JSON file and creating an object
 
@@ -40,6 +41,7 @@ def main():
 
     """ saving to required filename """
     save_to_json_file(my_list, "add_item.json")
+
 
 if __name__ = "__main__":
     main()
