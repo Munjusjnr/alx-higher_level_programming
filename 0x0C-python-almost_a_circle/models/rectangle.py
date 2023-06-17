@@ -7,6 +7,13 @@ from models.base import Base
 class Rectangle(Base):
     """ A class representing rectangle with base being inherited
 
+    Attributes:
+        width: A private instance representing width of the rectangle
+        height: A private instance representing height of the rectangle
+        x: A private instance with optional type
+        y: A private instance with optional type
+        id: A private instance with None optional type
+
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         self.__width = width
@@ -98,9 +105,45 @@ class Rectangle(Base):
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):
-            print( " " * self.__x + "#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """ method that returns the string representation of the rectangle """
         return ("[Rectangle] {(:d)} {:d}/{:d} - {:d}/{:d}".format(self.id,
                 self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args):
+        """ method that assigns an argument to each attribute """
+        if args:
+            if len(args) > 0:
+                self.id = args[0]
+            if len(args) > 1:
+                self.__width = args[1]
+            if len(args) > 2:
+                self.__height = args[2]
+            if len(args) > 3:
+                self.__x = args[3]
+            if len(args) > 4:
+                self.__y = args[4]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.__width = value
+                if key == "height":
+                    self.__height = value
+                if key == "x":
+                    self.__x = value
+                if key == "y":
+                    self.__y = value
+
+    def to_dictionary(self):
+        """ Returning the dictionary representation of a rectangle """
+        dictionary = {}
+        dictionary["id"] = seif.id
+        dictionary["width"] = self.__width
+        dictionary["height"] = self.__height
+        dictionary["x"] = self.__x
+        dictionary["y"] = self.__y
+        return dictionary
