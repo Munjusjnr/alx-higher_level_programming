@@ -16,10 +16,10 @@ class Rectangle(Base):
 
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -78,7 +78,7 @@ class Rectangle(Base):
             Return:
                  the value of x
         """
-        if type(x) is not int:
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -90,7 +90,7 @@ class Rectangle(Base):
             Return:
                 the value of y
         """
-        if type(y) is not int:
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
@@ -109,7 +109,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """ method that returns the string representation of the rectangle """
-        return ("[Rectangle] {(:d)} {:d}/{:d} - {:d}/{:d}".format(self.id,
+        return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
                 self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
@@ -141,9 +141,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ Returning the dictionary representation of a rectangle """
         dictionary = {}
-        dictionary["id"] = seif.id
-        dictionary["width"] = self.__width
-        dictionary["height"] = self.__height
-        dictionary["x"] = self.__x
-        dictionary["y"] = self.__y
+        dictionary["id"] = self.id
+        dictionary["width"] = self.width
+        dictionary["height"] = self.height
+        dictionary["x"] = self.x
+        dictionary["y"] = self.y
         return dictionary

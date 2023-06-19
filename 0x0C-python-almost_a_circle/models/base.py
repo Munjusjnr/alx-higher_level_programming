@@ -17,8 +17,8 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            base.__nb_object += 1
-            self.id = self.__nb_object
+            Base.__nb_objects += 1
+            self.id = self.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -62,7 +62,7 @@ class Base:
         """ Returning a list of instances """
         filename = cls.__name__ + ".json"
         try:
-            with open(filename, mod='w', encoding="UTF8") as f:
+            with open(filename, mode='r', encoding="UTF8") as f:
                 t = cls.from_json_string(f.read())
                 instance = [cls.create(**dictionary) for dictionary in t]
                 return instance
