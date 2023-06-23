@@ -16,31 +16,27 @@ class TestRectangle(unittest.TestCase):
 
     def test_id(self):
         """ Testing with id of the rectangle """
-        self.assertEqual(self.rectangle.id, 1)
+        self.assertEqual(self.rectangle.id, 4)
 
     def test_width(self):
         """ Testing the width of the rectangle """
-        self.assertEqual(self.rectangle.width, 5)
+        self.assertEqual(self.rectangle.width, 1)
 
     def test_height(self):
         """ Testing the height of the rectangle """
-        self.assertEqual(self.rectangle.height, 8)
+        self.assertEqual(self.rectangle.height, 5)
 
     def test_x(self):
         """ Testing for x functionality """
-        self.assertEqual(self.rectangle.x, 9)
+        self.assertEqual(self.rectangle.x, 8)
 
     def test_y(self):
         """ Testing for y functionality """
-        self.assertEqual(self.rectangle.y, 4)
+        self.assertEqual(self.rectangle.y, 9)
 
     def test_area(self):
         """ Testing for the area of the rectangle """
-        self.assertEqual(self.rectange.area, 40)
-
-    def test_id_is_None(self):
-        """ Testing when no id is given """
-        self.assertIsNone(self.rectangle.id)
+        self.assertEqual(self.rectangle.area(), 5)
 
     def test_invalid_width(self):
         """ Testing invalid width type """
@@ -112,12 +108,11 @@ class TestRectangle(unittest.TestCase):
 
     def test_str(self):
         rectangle_mode = str(self.rectangle)
-        expected_mode = "[Rectangle] (1) 9/4 - 5/8"
+        expected_mode = "[Rectangle] (4) 8/9 - 1/5"
         self.assertEqual(rectangle_mode, expected_mode)
 
     def test_dictionary_mode(self):
         """ Testing dictionary-like mode """
-        self.rectangle = Rectangle(5, 6, 7, 8, 9)
         rectangle_dict = self.rectangle.to_dictionary()
-        expected_dict = {"id": 5, "width": 6, "height": 7, "x": 8, "y": 9}
-        self.assertDictEqual(rectangle_dict, expected_dictionary)
+        expected_dict = {"id": 4, "width": 1, "height": 5, "x": 8, "y": 9}
+        self.assertDictEqual(rectangle_dict, expected_dict)
