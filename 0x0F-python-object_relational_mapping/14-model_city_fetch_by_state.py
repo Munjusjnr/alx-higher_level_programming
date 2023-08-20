@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-"""A script that deletes all State objects with a name containing the letter a
-from the database
-script would take 3 arguments: mysql username, mysql password and database name
+"""A script that that prints all City objects from the database
+script would take 3 arguments: mysql username, mysql password and
+database name
 Usage of the module SQLAlchemy
 """
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from model_city import City
 
 if __name__ == "__main__":
     engine = create_engine(f'mysql+mysqldb://{sys.argv[1]}:{sys.argv[2]}'
@@ -15,11 +16,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by(State.id).all()
-
-    for state in states:
-        if "a" in state.name:
-            session.delete(state)
-
-    session.commit()
-    session.close()
+    search = session.query(City, State).filter(City.state_id == State.id) \
+                    .order_by(City.id)
+    for city, state in search:
+        print(f"{state.name}: ({city.id}) {city.name}")
