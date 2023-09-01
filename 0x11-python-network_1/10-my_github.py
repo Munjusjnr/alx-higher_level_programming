@@ -12,4 +12,4 @@ if __name__ == "__main__":
     auth = (username, password)
     response = requests.get("https://api.github.com/user", auth=auth)
     data = response.json()
-    print(data.get("id"))                         
+    print(data.get("id"))
